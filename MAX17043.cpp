@@ -87,6 +87,15 @@ void MAX17043::reset() {
 	writeRegister(COMMAND_REGISTER, 0x00, 0x54);
 }
 
+void MAX17043::sleep() {
+	byte MSB = 0;
+	byte LSB = 0;
+	
+	readConfigRegister(MSB, LSB);	
+	
+	writeRegister(CONFIG_REGISTER, MSB, LSB | 0x80);		
+}
+
 void MAX17043::quickStart() {
 	
 	writeRegister(MODE_REGISTER, 0x40, 0x00);
