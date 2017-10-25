@@ -29,7 +29,7 @@ class MAX17043 {
 		void setAlertThreshold(byte threshold);
 		boolean inAlert();
 		void clearAlert();
-		
+		void sleep();
 		void reset();
 		void quickStart();
 	
